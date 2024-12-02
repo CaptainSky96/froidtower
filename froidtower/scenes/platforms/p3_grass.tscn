@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://ceb0k6qakaed3"]
+
+[ext_resource type="Texture2D" uid="uid://bnk70qm363i68" path="res://assets/sprites/platforms/grassHalfLeft.png" id="1_qojfk"]
+[ext_resource type="Texture2D" uid="uid://bhad72dk0n1cy" path="res://assets/sprites/platforms/grassHalfMid.png" id="2_d88pk"]
+[ext_resource type="Texture2D" uid="uid://cpfwq62ucmvo3" path="res://assets/sprites/platforms/grassHalfRight.png" id="3_aaken"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pasi"]
+size = Vector2(62, 11)
+
+[node name="p3_grass" type="Node2D"]
+
+[node name="p3_grass" type="AnimatableBody2D" parent="."]
+
+[node name="left" type="Sprite2D" parent="p3_grass"]
+position = Vector2(-21, 0)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_qojfk")
+region_rect = Rect2(207, 87, 9, 0)
+region_filter_clip_enabled = true
+
+[node name="mid" type="Sprite2D" parent="p3_grass"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_d88pk")
+
+[node name="right" type="Sprite2D" parent="p3_grass"]
+position = Vector2(21, 0)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_aaken")
+
+[node name="Collision" type="CollisionShape2D" parent="p3_grass"]
+visible = false
+y_sort_enabled = true
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_4pasi")
+one_way_collision = true
+one_way_collision_margin = 2.0

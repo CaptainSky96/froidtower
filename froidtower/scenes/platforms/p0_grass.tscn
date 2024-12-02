@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwaxmkrfflrrb"]
+
+[ext_resource type="Texture2D" uid="uid://b3kg8saofnqyq" path="res://assets/sprites/tilemap.png" id="1_gfyd2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_na5no"]
+
+[node name="p0_grass" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_gfyd2")
+region_enabled = true
+region_rect = Rect2(69, 92, 21, 21)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+shape = SubResource("RectangleShape2D_na5no")
+one_way_collision = true
+one_way_collision_margin = 2.0

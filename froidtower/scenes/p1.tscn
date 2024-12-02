@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckcp6ud3vswvx"]
+
+[ext_resource type="Texture2D" uid="uid://nul3dn80dn7p" path="res://assets/sprites/froids/flo.png" id="1_o33w0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8eo2p"]
+atlas = ExtResource("1_o33w0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4b5n"]
+atlas = ExtResource("1_o33w0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n1jln"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_8eo2p")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_e4b5n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nm3ut"]
+size = Vector2(11, 22)
+
+[node name="p1" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_n1jln")
+autoplay = "default"
+frame = 1
+frame_progress = 0.501913
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_nm3ut")

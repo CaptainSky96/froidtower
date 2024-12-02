@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://45lte3r17w2d"]
+
+[ext_resource type="Texture2D" uid="uid://bfostrn4qkjwr" path="res://assets/sprites/platforms/dirtHalfLeft.png" id="1_d63r1"]
+[ext_resource type="Texture2D" uid="uid://dqvc62vyvbyfl" path="res://assets/sprites/platforms/dirtHalfMid.png" id="2_7m18v"]
+[ext_resource type="Texture2D" uid="uid://bhtqmceitew5c" path="res://assets/sprites/platforms/dirtHalfRight.png" id="3_3yeox"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pasi"]
+size = Vector2(62, 11)
+
+[node name="p3_dirt" type="Node2D"]
+
+[node name="p3_dirt" type="AnimatableBody2D" parent="."]
+
+[node name="left" type="Sprite2D" parent="p3_dirt"]
+position = Vector2(-21, 0)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_d63r1")
+region_rect = Rect2(207, 87, 9, 0)
+region_filter_clip_enabled = true
+
+[node name="mid" type="Sprite2D" parent="p3_dirt"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_7m18v")
+
+[node name="right" type="Sprite2D" parent="p3_dirt"]
+position = Vector2(21, 0)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_3yeox")
+
+[node name="Collision" type="CollisionShape2D" parent="p3_dirt"]
+visible = false
+y_sort_enabled = true
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_4pasi")
+one_way_collision = true
+one_way_collision_margin = 2.0

@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dk63muv2totuw"]
+
+[ext_resource type="Texture2D" uid="uid://d4ewkquiwxefg" path="res://assets/sprites/platforms/stoneHalfLeft.png" id="1_ar50m"]
+[ext_resource type="Texture2D" uid="uid://lqrjokdgl8wu" path="res://assets/sprites/platforms/stoneHalfMid.png" id="2_05hqx"]
+[ext_resource type="Texture2D" uid="uid://bj86whurie5uw" path="res://assets/sprites/platforms/stoneHalfRight.png" id="3_k8uuv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pasi"]
+size = Vector2(62, 11)
+
+[node name="p3_stone" type="Node2D"]
+
+[node name="p3_stone" type="AnimatableBody2D" parent="."]
+
+[node name="left" type="Sprite2D" parent="p3_stone"]
+position = Vector2(-21, 0)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_ar50m")
+region_rect = Rect2(207, 87, 9, 0)
+region_filter_clip_enabled = true
+
+[node name="mid" type="Sprite2D" parent="p3_stone"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_05hqx")
+
+[node name="right" type="Sprite2D" parent="p3_stone"]
+position = Vector2(21, 0)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_k8uuv")
+
+[node name="Collision" type="CollisionShape2D" parent="p3_stone"]
+visible = false
+y_sort_enabled = true
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_4pasi")
+one_way_collision = true
+one_way_collision_margin = 2.0
